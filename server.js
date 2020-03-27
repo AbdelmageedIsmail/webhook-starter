@@ -6,17 +6,17 @@ var app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json())
 
-var recievedMessages = ""
+var receivedMessages = ""
 var messageStatuses = ""
 var notifications = ""
 
 app.get("/", function (request, response) {
-  response.send("<h1>Recieved messages</h1>\n"+recievedMessages+"<h1>Send messages statuses</h1>\n"+messageStatuses+"\n<h1>Notifications</h1>"+notifications);
+  response.send("<h1>Received messages</h1>\n"+receivedMessages+"<h1>Sent messages statuses</h1>\n"+messageStatuses+"\n<h1>Notifications</h1>"+notifications);
 });
 
 app.post("/", function (request, response) {
   console.log('Incoming message: ' + JSON.stringify(request.body));
-  recievedMessages += "<p>" + JSON.stringify(request.body) + "</p>";
+  receivedMessages += "<p>" + JSON.stringify(request.body) + "</p>";
   response.sendStatus(200);
 });
 
