@@ -11,7 +11,7 @@ var messageStatuses = ""
 var notifications = ""
 
 app.get("/", function (request, response) {
-  response.send("<h1>Received messages</h1>\n"+receivedMessages+"<h1>Sent messages statuses</h1>\n"+messageStatuses+"\n<h1>Notifications</h1>"+notifications);
+  response.send("<h1>WhatsApp Bot App</h1>\n<h1>Received messages</h1>\n"+receivedMessages+"<h1>Sent messages statuses</h1>\n"+messageStatuses+"\n<h1>Notifications</h1>"+notifications);
 });
 
 app.post("/", function (request, response) {
