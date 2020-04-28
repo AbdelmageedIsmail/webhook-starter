@@ -14,6 +14,11 @@ app.get("/", function (request, response) {
   response.send("<h1>WhatsApp Bot App</h1>\n<h1>Received messages</h1>\n"+receivedMessages+"<h1>Sent messages statuses</h1>\n"+messageStatuses+"\n<h1>Notifications</h1>"+notifications);
 });
 
+app.get("/test", function (request, response) {
+  response.send("<h1>WhatsApp Bot App - This is a test page</h1>");
+});
+
+
 app.post("/", function (request, response) {
   console.log('Incoming message: ' + JSON.stringify(request.body));
   receivedMessages += "<p>" + JSON.stringify(request.body) + "</p>";
